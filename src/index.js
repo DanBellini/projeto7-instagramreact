@@ -1,4 +1,4 @@
-import React from "react-dom";
+import ReactDOM from "react-dom";
 import Mobilebar from "./components/Mobilebar";
 import Navbar from "./components/Navbar";
 import Page from "./components/Page";

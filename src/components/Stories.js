@@ -23,6 +23,7 @@ function Stories (props){
 }
 
 export default function Storiesbox (){
+  return (
     <div class="stories">
         {stores.map(store => <Stories 
                                     img={store.image}
@@ -32,4 +33,5 @@ export default function Storiesbox (){
             <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
     </div>
+  )
 }
