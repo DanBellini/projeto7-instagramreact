@@ -1,3 +1,5 @@
+import React from "react"
+
 const postsinfo =[
     {photo:"./media/img/meowed.svg", perfil:"meowed", image:"./media/img/gato-telefone.svg", 
     liked:"./media/img/respondeai.svg", text:"respondeai", textnumber:"101.523"},
@@ -6,6 +8,9 @@ const postsinfo =[
 ]
 
 function Posted (props){
+
+    const [like, setLike] = React.useState(false);
+
     return(
         <div class="post">
             <div class="topo">
@@ -19,13 +24,16 @@ function Posted (props){
             </div>
 
             <div class="conteudo">
-                <img src={props.img} />
+                <img  onClick={()=> setLike(true)} src={props.img} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        {like ? 
+                            <ion-icon name="heart" style={{color:'red'}} onClick={() => setLike (!like)}></ion-icon> :
+                            <ion-icon name="heart-outline" onClick={() => setLike (!like)}></ion-icon>
+                        }
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
